@@ -6,7 +6,7 @@ import pandas as pd
 import pickle
 
 #load the trained model
-model=tf.keras.models.load_model('model.h5')
+model=tf.keras.models.load_model('model.h5',compile=False)
 
 #load encoders and scaler
 with open('label_encoder_gender','rb') as file:
@@ -69,4 +69,5 @@ if prediction_probability>0.5:
     st.write("the customer is likely to churn")
 else:
     st.write("the customer is not likely to churn")
+
 
